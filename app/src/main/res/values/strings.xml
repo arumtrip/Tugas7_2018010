@@ -2,4 +2,22 @@
     <string name="app_name">Facebook</string>
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string-array name="gitar">
+        <item>Gitar Akustik</item>
+        <item>Gitar Elektrik</item>
+        <item>Gitar Bass</item>
+        <item>Gitar Elektrik</item>
+    </string-array>
+    <string-array name="star">
+        <item>4.5</item>
+        <item>4.7</item>
+        <item>4.4</item>
+        <item>4.9</item>
+    </string-array>
+    <string-array name="deskripsi">
+        <item>Rp. 500.000</item>
+        <item>Rp. 700.000</item>
+        <item>Rp. 1.000.000</item>
+        <item>Rp. 1.000.000</item>
+    </string-array>
 </resources>

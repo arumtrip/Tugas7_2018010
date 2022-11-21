@@ -9,21 +9,34 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.os.Bundle;
 import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
-public class MainActivity extends AppCompatActivity implements
-        NavigationView.OnNavigationItemSelectedListener {
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    RecyclerView recylerView;
+    String s1[], s2[],s3[];
+    int images[] = {R.drawable.elektrikcortm200,R.drawable.yamahaf310,R.drawable.bassfender,R.drawable.elektrikyamahapacifia};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        recylerView = findViewById(R.id.recyclerView);
+        s1 = getResources().getStringArray(R.array.gitar);
+        s2 = getResources().getStringArray(R.array.deskripsi);
+        s3 = getResources().getStringArray(R.array.star);
+        GitarAdapter appAdapter = new GitarAdapter(this,s1,s2,s3,images);
+        recylerView.setAdapter(appAdapter);
+        recylerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
         //mengganti actionbar dengan toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         //memanggil drawer_layout dari activity_main.xml
         drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView =
-                findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
         //membuat hamburger icon pada toolbar dan animasinya
         ActionBarDrawerToggle toggle = new
                 ActionBarDrawerToggle(this, drawer, toolbar,
@@ -31,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements
                 R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
         //membuat default navigation menu select
         if(savedInstanceState == null){
 
