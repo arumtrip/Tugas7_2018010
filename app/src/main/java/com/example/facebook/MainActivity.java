@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     RecyclerView recylerView;
     String s1[], s2[],s3[];
     int images[] = {R.drawable.elektrikcortm200,R.drawable.yamahaf310,R.drawable.bassfender,R.drawable.elektrikyamahapacifia};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +72,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new AkustikFragment()).commit();
                 break;
+            case R.id.nav_alarm:
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new AlarmFragment()).commit();
+                break;
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -85,4 +91,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
+
 }

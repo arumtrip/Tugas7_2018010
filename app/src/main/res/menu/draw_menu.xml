@@ -13,5 +13,9 @@
             android:id="@+id/nav_akustik"
             android:icon="@drawable/ic_akustik"
             android:title="Gitar Akustik" />
+        <item
+            android:id="@+id/nav_alarm"
+            android:icon="@drawable/ic_baseline_add_alarm_24"
+            android:title="Alarm" />
     </group>
 </menu>
